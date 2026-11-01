@@ -1,0 +1,8 @@
+[
+  {"code": "first_focus", "title": "First Focus", "description": "Complete your first focus session."},
+  {"code": "deep_work", "title": "Deep Work", "description": "Stay on task for 90 minutes without a nudge."},
+  {"code": "comeback", "title": "Comeback", "description": "Return to your goal within 30 seconds of a nudge."},
+  {"code": "early_bird", "title": "Early Bird", "description": "Start a focus session before 8 am."},
+  {"code": "seven_day_streak", "title": "Seven-Day Streak", "description": "Reach a seven-day focus streak."},
+  {"code": "distraction_slayer", "title": "Distraction Slayer", "description": "Finish a session without a nudge."}
+]

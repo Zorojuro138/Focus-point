@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "FocusPilot Page Context",
+  "version": "1.0.0",
+  "description": "Shares only the active page title and URL path with FocusPilot during a focus session.",
+  "permissions": ["tabs", "alarms"],
+  "host_permissions": ["http://127.0.0.1:43821/*"],
+  "background": {
+    "service_worker": "service_worker.js"
+  }
+}

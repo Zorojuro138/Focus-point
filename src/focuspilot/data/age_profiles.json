@@ -1,0 +1,26 @@
+{
+  "5-7": {
+    "daily_limit_min": 60,
+    "bedtime_start": "19:30",
+    "bedtime_end": "07:00",
+    "allowlist": ["study", "design"]
+  },
+  "8-10": {
+    "daily_limit_min": 90,
+    "bedtime_start": "20:30",
+    "bedtime_end": "07:00",
+    "allowlist": ["study", "design", "writing", "research"]
+  },
+  "11-13": {
+    "daily_limit_min": 120,
+    "bedtime_start": "21:30",
+    "bedtime_end": "06:45",
+    "allowlist": []
+  },
+  "14-17": {
+    "daily_limit_min": 180,
+    "bedtime_start": "23:00",
+    "bedtime_end": "06:30",
+    "allowlist": []
+  }
+}

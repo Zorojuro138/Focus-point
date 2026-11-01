@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "focuspilot"
+version = "0.1.0"
+description = "A local-first Windows focus tracker"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "PySide6>=6.8",
+    "psutil>=6.0",
+    "SQLAlchemy>=2.0",
+    "alembic>=1.14",
+    "argon2-cffi>=23.1",
+    "pywin32>=308; sys_platform == 'win32'",
+]
+
+[project.optional-dependencies]
+ai = [
+    "sentence-transformers>=3.3",
+    "onnxruntime>=1.20",
+]
+dev = [
+    "freezegun>=1.5",
+    "mypy>=1.14",
+    "pytest>=8.3",
+    "pytest-qt>=4.4",
+    "ruff>=0.9",
+]
+installer = ["pyinstaller>=6.11"]
+
+[project.scripts]
+focuspilot = "focuspilot.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+focuspilot = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.11"
+# FocusPilot is a Windows app: type-check it as one, on any development machine.
+platform = "win32"
+mypy_path = "src"
+strict = true
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = [
+    "psutil",
+    "pywintypes",
+    "win32con",
+    "win32crypt",
+    "win32gui",
+    "win32process",
+]
+ignore_missing_imports = true
